@@ -3,6 +3,9 @@ version: '2.0.0'
 
 profile: 'dbt_learn_proj'
 
+clean-targets:
+  - "target"
+
 model-paths: ["models"]
 macro-paths: ["macros"]
 
@@ -11,3 +14,9 @@ models:
   dbt_learn_proj:
     silver_airbnb:
       +schema: 'silver_airbnb'
+      +materialized: view
+
+    gold_airbnb:
+      +schema: 'gold_airbnb'
+      +materialized: table
+

@@ -3,11 +3,11 @@ dbt_learn_proj:
     dev:
       account: HLPFGQD-ZO88945
       database: DEV
-      password: Anviksha@12345
+      password: dbtPassword123
       role: TRANSFORM
       schema: bronze_airbnb
       threads: 1
       type: snowflake
-      user: ankur24s
+      user: dbt
       warehouse: COMPUTE_WH
   target: dev

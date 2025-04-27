@@ -1,6 +1,6 @@
 WITH src_reviews AS ( SELECT
 *
-FROM DEV.BRONZE_AIRBNB.src_reviews
+FROM {{source('src_airbnb','reviews')}}
 )
 SELECT
 listing_id,
