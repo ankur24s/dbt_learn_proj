@@ -8,6 +8,9 @@ clean-targets:
 
 model-paths: ["models"]
 macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+seed-paths: ['seeds']
+
 
 
 models:
