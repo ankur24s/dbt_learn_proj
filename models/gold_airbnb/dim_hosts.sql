@@ -1,10 +1,13 @@
-{{config(materialized='table')}}
 
+{{config(materialized = 'table')}}
 
 SELECT
-    host_id,
-    NVL( host_name, 'Anonymous') AS host_name,
-    is_superhost,
-    created_at,
-    updated_at
-FROM {{ref('dbt_learn_proj','stg_hosts')}}
+    a.host_id,
+    NVL( a.host_name, 'Anonymous') AS host_name,
+    a.is_superhost,
+    a.created_at,
+    a.updated_at
+FROM
+    {{ ref('stg_hosts') }} a inner join  {{ ref('hosts_snapshot') }} b
+    on a.host_id = b.id
+    and current_date() between b.DBT_VALID_FROM and nvl(b.DBT_VALID_TO,'9999-12-31')

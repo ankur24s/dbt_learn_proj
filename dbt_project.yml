@@ -5,6 +5,7 @@ profile: 'dbt_learn_proj'
 
 clean-targets:
   - "target"
+  - "dbt_packages"
 
 model-paths: ["models"]
 macro-paths: ["macros"]
